@@ -154,32 +154,63 @@
     font-size: 0.8rem;
   }
 
-  .cases-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+ .cases-grid {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  padding: 0 4px 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.cases-grid::-webkit-scrollbar {
+  display: none;
+}
+
+.case-card {
+  flex: 0 0 82%;
+  min-width: 82%;
+  max-width: 82%;
+  scroll-snap-align: start;
+  padding: 10px 10px 14px;
+  transform: none;
+}
 
   .case-card {
     transform: none;
     padding: 12px 12px 18px;
   }
 
-  .case-content h3 {
-    font-size: 2rem;
-  }
+.case-content h3 {
+  font-size: 1.5rem;
+  line-height: 1;
+}
 
-  .case-id {
-    font-size: 0.75rem;
-  }
+.case-id {
+  font-size: 0.62rem;
+  margin-bottom: 6px;
+}
 
-  .case-content p {
-    font-size: 1.2rem;
-  }
+.case-content p {
+  font-size: 1rem;
+  line-height: 1.25;
+  min-height: auto;
+  margin-bottom: 14px;
+}
 
-  .case-btn {
-    font-size: 0.75rem;
-    padding: 10px 14px;
-  }
+.case-actions {
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.case-btn {
+  min-width: 140px;
+  height: 44px;
+  font-size: 0.72rem;
+  padding: 0 12px;
+}
+
 
   .info-grid {
     gap: 18px;
