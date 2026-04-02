@@ -882,3 +882,27 @@ a {
 /*#######################  MOBILE #####################################*/ 
 /*###################################################################*/
 
+
+
+
+@media (max-width: 768px) {
+  .hero-wrapper {
+    width: 94%;
+    height: 280px;
+  }
+
+  .hero-content {
+    max-width: 80%;
+    padding-right: 30px;
+    padding-left: 20px;
+  }
+
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+}
