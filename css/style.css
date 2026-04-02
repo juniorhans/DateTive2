@@ -162,8 +162,9 @@ a {
 
 .hero {
   position: relative;
-  height: 520px;
+  height: 300px;
   overflow: hidden;
+  margin-bottom: 28px;
 }
 
 .hero {
@@ -223,28 +224,30 @@ a {
 .hero-content {
   position: relative;
   z-index: 3;
-  max-width: 560px;
+  max-width: 460px;
   text-align: left;
   color: #f1e4c9;
-  padding-left: 70px;
-  padding-right: 30px;
+  padding-left: 50px;
+  padding-right: 20px;
 }
+
 
 .hero-content h2 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.8rem, 5vw, 4.8rem);
-  line-height: 0.92;
-  margin-bottom: 16px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  line-height: 0.95;
+  margin-bottom: 10px;
   color: #f0dec0;
   text-shadow: 0 3px 10px rgba(0,0,0,0.45);
 }
 
+
 .hero-content p {
-  font-size: 1.35rem;
-  line-height: 1.45;
-  margin-bottom: 24px;
+  font-size: 1rem;
+  line-height: 1.35;
+  margin-bottom: 0;
   color: rgba(240, 228, 205, 0.92);
-  max-width: 500px;
+  max-width: 420px;
   text-shadow: 0 2px 8px rgba(0,0,0,0.4);
 }
 
@@ -276,10 +279,11 @@ a {
 }
 
 .hero-wrapper {
-  width: 1300px;
+  width: 100%;
+  max-width: 1300px;
   margin: 0 auto;
   position: relative;
-  height: 420px;
+  height: 300px;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
