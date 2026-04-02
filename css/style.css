@@ -885,7 +885,7 @@ a {
 
 
 
-@media (max-width: 768px) {
+@media (max-width: 568px) {
   .hero-wrapper {
     width: 94%;
     height: 280px;
