@@ -399,14 +399,15 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 28px;
+  margin-bottom: 1px;
 }
 
 .section-title-row h2 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 3rem;
+  font-size: 4rem;
   color: var(--paper-light);
   letter-spacing: 2px;
+  text-shadow: 6px 6px 2px rgba(0, 0, 0, 0.9);
 }
 
 .section-title-row a {
