@@ -189,10 +189,10 @@ a {
   inset: 0;
   background: linear-gradient(
     to right,
-    rgba(0, 0, 0, 0.58) 0%,
-    rgba(0, 0, 0, 0.38) 35%,
-    rgba(0, 0, 0, 0.18) 60%,
-    rgba(0, 0, 0, 0.08) 100%
+    rgba(0, 0, 0, 0.18) 0%,
+    rgba(0, 0, 0, 0.08) 35%,
+    rgba(0, 0, 0, 0.03) 60%,
+    rgba(0, 0, 0, 0) 100%
   );
   z-index: 2;
 }
@@ -211,7 +211,7 @@ a {
   height: 100%;
   object-fit: cover;
   object-position: center;
-  filter: sepia(0.45) contrast(1.02) brightness(0.78);
+  filter: sepia(0.45) contrast(1.02) brightness(0.85);
 }
 
 .hero-content {
@@ -903,4 +903,159 @@ a {
     font-size: 1rem;
     line-height: 1.35;
   }
+}
+
+
+
+/* ######################################################## */
+/* ################### COMO FUNCIONA ###################### */
+/* ######################################################## */
+
+.how-it-works {
+  padding: 50px 0 60px;
+}
+
+.how-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.how-title h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4.2rem;
+  letter-spacing: 2px;
+  color: var(--paper-light);
+  text-shadow: 6px 6px 2px rgba(0, 0, 0, 0.9);
+  margin-bottom: 10px;
+}
+
+.how-title p {
+  max-width: 780px;
+  margin: 0 auto;
+  font-size: 1.45rem;
+  color: rgba(227, 215, 192, 0.82);
+  line-height: 1.35;
+}
+
+.how-list {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+}
+
+.how-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  align-items: center;
+  gap: 28px;
+  background: linear-gradient(to bottom, #d7c8ac 0%, #ccb996 55%, #c4b08d 100%);
+  border: 2px solid rgba(0,0,0,0.28);
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.35),
+    inset 0 0 0 1px rgba(80, 55, 30, 0.10),
+    inset 0 0 25px rgba(80, 55, 30, 0.08);
+  padding: 18px;
+  overflow: hidden;
+}
+
+.how-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("../assets/img/textures/paper-grain.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.8;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.how-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top left, rgba(80,50,20,0.14), transparent 20%),
+    radial-gradient(circle at top right, rgba(80,50,20,0.10), transparent 18%),
+    radial-gradient(circle at bottom left, rgba(80,50,20,0.12), transparent 22%),
+    radial-gradient(circle at bottom right, rgba(80,50,20,0.16), transparent 24%);
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.how-card.reverse {
+  grid-template-columns: 1fr 340px;
+}
+
+.how-card.reverse .how-image {
+  order: 2;
+}
+
+.how-card.reverse .how-text {
+  order: 1;
+}
+
+.how-image {
+  position: relative;
+  z-index: 2;
+  background: #eee5d3;
+  padding: 8px 8px 18px;
+  border: 1px solid rgba(0,0,0,0.18);
+  box-shadow:
+    0 4px 12px rgba(0,0,0,0.18),
+    inset 0 0 0 1px rgba(255,255,255,0.15);
+  transform: rotate(-1deg);
+}
+
+.how-image img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(25%) sepia(0.35) contrast(1.05) brightness(0.88);
+}
+
+.how-text {
+  position: relative;
+  z-index: 2;
+  color: var(--ink);
+}
+
+.how-step {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+  color: rgba(31,26,20,0.75);
+  border-bottom: 1px solid rgba(31,26,20,0.25);
+  padding-bottom: 6px;
+}
+
+.how-text h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  line-height: 0.95;
+  margin-bottom: 14px;
+  color: var(--ink);
+}
+
+.how-text p {
+  font-size: 1.45rem;
+  line-height: 1.35;
+  color: var(--ink);
+  max-width: 760px;
+}
+
+/* ANIMAÇÃO DE ENTRADA */
+.reveal-up {
+  opacity: 0;
+  transform: translateY(90px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }

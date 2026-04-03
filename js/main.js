@@ -36,3 +36,20 @@ function changeSlide() {
 }
 
 setInterval(changeSlide, 4000);
+
+/* ANIMAÇÃO AO ENTRAR NA TELA */
+const revealElements = document.querySelectorAll(".reveal-up");
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, {
+  threshold: 0.18
+});
+
+revealElements.forEach((el) => {
+  revealObserver.observe(el);
+});

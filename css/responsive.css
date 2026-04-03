@@ -276,3 +276,67 @@
     flex-wrap: wrap;
   }
 }
+
+/* ######################################################## */
+/* ################ COMO FUNCIONA RESPONSIVO ############## */
+/* ######################################################## */
+
+@media (max-width: 768px) {
+  .how-it-works {
+    padding: 35px 0 40px;
+  }
+
+  .how-title {
+    margin-bottom: 28px;
+  }
+
+  .how-title h2 {
+    font-size: 2.4rem;
+  }
+
+  .how-title p {
+    font-size: 1rem;
+    line-height: 1.35;
+    max-width: 100%;
+  }
+
+  .how-list {
+    gap: 20px;
+  }
+
+  .how-card,
+  .how-card.reverse {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 14px;
+  }
+
+  .how-card.reverse .how-image,
+  .how-card.reverse .how-text {
+    order: unset;
+  }
+
+  .how-image {
+    transform: none;
+  }
+
+  .how-image img {
+    height: 200px;
+  }
+
+  .how-step {
+    font-size: 0.7rem;
+    letter-spacing: 1.5px;
+    margin-bottom: 8px;
+  }
+
+  .how-text h3 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+  }
+
+  .how-text p {
+    font-size: 1.1rem;
+    line-height: 1.35;
+  }
+}
