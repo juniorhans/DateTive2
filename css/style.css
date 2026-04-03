@@ -913,6 +913,8 @@ a {
 
 .how-it-works {
   padding: 50px 0 60px;
+  background: #2a2a2f;
+  position: relative;
 }
 
 .how-title {
@@ -949,25 +951,32 @@ a {
   grid-template-columns: 340px 1fr;
   align-items: center;
   gap: 28px;
-  background: linear-gradient(to bottom, #d7c8ac 0%, #ccb996 55%, #c4b08d 100%);
-  border: 2px solid rgba(0,0,0,0.28);
-  box-shadow:
-    0 10px 25px rgba(0,0,0,0.35),
-    inset 0 0 0 1px rgba(80, 55, 30, 0.10),
-    inset 0 0 25px rgba(80, 55, 30, 0.08);
-  padding: 18px;
+  padding: 22px;
   overflow: hidden;
+
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  box-shadow:
+    0 12px 30px rgba(0,0,0,0.28),
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    inset 0 -1px 0 rgba(255,255,255,0.02);
+
+  border-radius: 22px;
 }
 
 .how-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: url("../assets/img/textures/paper-grain.png");
-  background-size: cover;
-  background-position: center;
-  opacity: 0.8;
-  mix-blend-mode: multiply;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.08) 0%,
+    rgba(255,255,255,0.02) 35%,
+    rgba(255,255,255,0.01) 100%
+  );
   pointer-events: none;
 }
 
@@ -976,12 +985,9 @@ a {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at top left, rgba(80,50,20,0.14), transparent 20%),
-    radial-gradient(circle at top right, rgba(80,50,20,0.10), transparent 18%),
-    radial-gradient(circle at bottom left, rgba(80,50,20,0.12), transparent 22%),
-    radial-gradient(circle at bottom right, rgba(80,50,20,0.16), transparent 24%);
+    radial-gradient(circle at top left, rgba(255,255,255,0.06), transparent 20%),
+    radial-gradient(circle at bottom right, rgba(255,255,255,0.03), transparent 25%);
   pointer-events: none;
-  mix-blend-mode: multiply;
 }
 
 .how-card.reverse {
@@ -999,13 +1005,16 @@ a {
 .how-image {
   position: relative;
   z-index: 2;
-  background: #eee5d3;
-  padding: 8px 8px 18px;
-  border: 1px solid rgba(0,0,0,0.18);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 12px;
+  border: 1px solid rgba(255,255,255,0.10);
   box-shadow:
-    0 4px 12px rgba(0,0,0,0.18),
-    inset 0 0 0 1px rgba(255,255,255,0.15);
+    0 8px 20px rgba(0,0,0,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+  border-radius: 18px;
   transform: rotate(-1deg);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
 }
 
 .how-image img {
@@ -1013,13 +1022,14 @@ a {
   height: 240px;
   object-fit: cover;
   display: block;
-  filter: grayscale(25%) sepia(0.35) contrast(1.05) brightness(0.88);
+  border-radius: 12px;
+  filter: contrast(1.02) brightness(0.96);
 }
 
 .how-text {
   position: relative;
   z-index: 2;
-  color: var(--ink);
+  color: #f2f2f2;
 }
 
 .how-step {
@@ -1028,8 +1038,8 @@ a {
   font-size: 0.9rem;
   letter-spacing: 2px;
   margin-bottom: 12px;
-  color: rgba(31,26,20,0.75);
-  border-bottom: 1px solid rgba(31,26,20,0.25);
+  color: rgba(255,255,255,0.72);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
   padding-bottom: 6px;
 }
 
@@ -1038,13 +1048,14 @@ a {
   font-size: 3rem;
   line-height: 0.95;
   margin-bottom: 14px;
-  color: var(--ink);
+  color: #ffffff;
+  text-shadow: 0 3px 12px rgba(0,0,0,0.22);
 }
 
 .how-text p {
   font-size: 1.45rem;
   line-height: 1.35;
-  color: var(--ink);
+  color: rgba(255,255,255,0.82);
   max-width: 760px;
 }
 
