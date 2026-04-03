@@ -162,14 +162,7 @@ a {
 
 .hero {
   position: relative;
-  height: 300px;
-  overflow: hidden;
-  margin-bottom: 28px;
-}
-
-.hero {
-  position: relative;
-  height: 420px;
+  height: auto;
   overflow: hidden;
   margin-bottom: 40px;
 }
@@ -283,7 +276,7 @@ a {
   max-width: 1300px;
   margin: 0 auto;
   position: relative;
-  height: 300px;
+  height: 520px;
   overflow: hidden;
   box-shadow: 0 12px 30px rgba(0,0,0,0.35);
 }
