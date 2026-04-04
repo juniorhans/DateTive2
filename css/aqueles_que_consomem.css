@@ -1,0 +1,552 @@
+/* FUNDO DA PÁGINA */
+.case-page {
+  background: radial-gradient(circle at top, #1a1816, #0c0b0a 70%);
+  color: #e7dcc6;
+}
+
+/* HERO */
+.case-hero {
+  padding: 20px 0 80px;
+}
+
+/* GRID */
+.case-hero-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* CAPA */
+.case-cover-frame {
+  background: #141210;
+  padding: 14px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.7),
+    inset 0 0 0 1px rgba(255,255,255,0.03);
+}
+
+.case-cover {
+  width: 100%;
+  display: block;
+  filter: grayscale(20%) contrast(1.05) brightness(0.85);
+}
+
+/* alinhamento fino da capa */
+.case-cover-column {
+  padding-top: 20px;
+}
+
+/* LABEL */
+.case-file-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  color: rgba(231,220,198,0.6);
+  display: block;
+  margin-bottom: 18px;
+}
+
+/* TÍTULO */
+.case-title {
+  font-family: 'Cinzel', serif;
+  font-weight: 600;
+  font-size: 3.8rem;
+  line-height: 0.9;
+  color: #f1e6cd;
+  margin-bottom: 20px;
+  text-shadow: 0 10px 25px rgba(0,0,0,0.8);
+}
+
+.case-title span {
+  display: block;
+}
+
+/* SINOPSE */
+.case-synopsis {
+  font-size: 1.28rem;
+  line-height: 1.55;
+  max-width: 650px;
+  margin-bottom: 26px;
+  color: rgba(231,220,198,0.86);
+  text-wrap: pretty;
+}
+
+/* FRASE */
+.case-quote {
+  position: relative;
+  max-width: 680px;
+  font-style: italic;
+  font-size: 1.18rem;
+  line-height: 1.5;
+  margin-bottom: 34px;
+  color: rgba(231,220,198,0.72);
+  padding: 18px 20px 18px 24px;
+  border-left: 2px solid rgba(231,220,198,0.18);
+  background: linear-gradient(
+    to right,
+    rgba(255,255,255,0.035),
+    rgba(255,255,255,0.01)
+  );
+  backdrop-filter: blur(4px);
+}
+
+.case-quote::before {
+  content: "“";
+  position: absolute;
+  top: -8px;
+  left: 10px;
+  font-size: 3rem;
+  color: rgba(231,220,198,0.12);
+  font-family: serif;
+}
+
+/* BOTÕES */
+.case-actions {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.secondary-btn {
+  opacity: 0.6;
+}
+
+/* META BOX */
+.case-meta-box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 10px;
+  padding: 24px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.045),
+    rgba(255,255,255,0.015)
+  );
+  box-shadow:
+    0 12px 35px rgba(0,0,0,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+  backdrop-filter: blur(8px);
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.meta-label {
+  font-size: 0.68rem;
+  letter-spacing: 2px;
+  color: rgba(231,220,198,0.48);
+  font-family: 'Cinzel', serif;
+}
+
+.meta-value {
+  font-size: 1.02rem;
+  color: #f1e6cd;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+
+/* =========================
+   TÍTULO PREMIUM DO CASO
+========================= */
+
+.case-title {
+  position: relative;
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-weight: 700;
+  font-size: 4.5rem;
+  line-height: 0.88;
+  letter-spacing: 1.5px;
+  color: #f0e5cd;
+  margin-bottom: 22px;
+  text-shadow:
+    0 2px 0 rgba(255,255,255,0.03),
+    0 10px 30px rgba(0,0,0,0.85),
+    0 0 18px rgba(122, 31, 31, 0.12);
+}
+
+.case-title span {
+  display: block;
+  position: relative;
+}
+
+.case-title span:first-child {
+  font-size: 3.3rem;
+  letter-spacing: 4px;
+  opacity: 0.9;
+}
+
+.case-title span:last-child {
+  font-size: 5rem;
+  letter-spacing: 2px;
+}
+
+/* LINHA SUTIL ABAIXO DO TÍTULO */
+.case-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -12px;
+  width: 140px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    rgba(231,220,198,0.65),
+    rgba(231,220,198,0.08)
+  );
+}
+
+/* LEVE EFEITO DE "RESPIRAÇÃO" */
+@keyframes titlePulse {
+  0% {
+    text-shadow:
+      0 2px 0 rgba(255,255,255,0.03),
+      0 10px 30px rgba(0,0,0,0.85),
+      0 0 18px rgba(122, 31, 31, 0.10);
+  }
+  50% {
+    text-shadow:
+      0 2px 0 rgba(255,255,255,0.03),
+      0 10px 30px rgba(0,0,0,0.85),
+      0 0 24px rgba(122, 31, 31, 0.18);
+  }
+  100% {
+    text-shadow:
+      0 2px 0 rgba(255,255,255,0.03),
+      0 10px 30px rgba(0,0,0,0.85),
+      0 0 18px rgba(122, 31, 31, 0.10);
+  }
+}
+
+.case-title {
+  animation: titlePulse 4.5s ease-in-out infinite;
+}
+
+/* =========================
+   FUNDO CINEMATOGRÁFICO
+========================= */
+
+.case-page {
+  position: relative;
+  background: #0c0b0a;
+  overflow-x: hidden;
+}
+
+/* IMAGEM DE FUNDO */
+.case-page::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("../assets/img/cases/consomem-bg.jpg") center/cover no-repeat;
+  opacity: 0.18;
+  z-index: -2;
+}
+
+/* CAMADA ESCURA POR CIMA */
+.case-page::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at center,
+    rgba(0,0,0,0.4) 0%,
+    rgba(0,0,0,0.7) 60%,
+    rgba(0,0,0,0.92) 100%
+  );
+  z-index: -1;
+}
+
+/* HERO MAIS DESTACADO */
+.case-hero {
+  position: relative;
+  z-index: 2;
+}
+
+/* =========================
+   COLUNA DE INFORMAÇÕES
+========================= */
+
+.case-info-column {
+  position: relative;
+  padding: 20px 0;
+}
+
+
+/* =========================
+   TAGS (CLASSIFICAÇÃO)
+========================= */
+
+.meta-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 0.7rem;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 1px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+}
+
+/* cores individuais */
+.tag.sombrio {
+  color: #d2c6a8;
+  border-color: rgba(210,198,168,0.3);
+}
+
+.tag.traicao {
+  color: #c97a7a;
+  border-color: rgba(201,122,122,0.35);
+}
+
+.tag.misterio {
+  color: #8fa7c4;
+  border-color: rgba(143,167,196,0.35);
+}
+
+
+/* =========================
+   JOGADORES
+========================= */
+
+.meta-players {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.player-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgba(231,220,198,0.7);
+  position: relative;
+}
+
+.player-icon::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 6px;
+  background: rgba(231,220,198,0.7);
+  border-radius: 10px;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.meta-players span {
+  font-size: 0.95rem;
+}
+
+
+/* =========================
+   DIFICULDADE
+========================= */
+
+.meta-difficulty {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.star {
+  width: 14px;
+  height: 14px;
+  background: rgba(255,255,255,0.15);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+
+.star.active {
+  background: #e0a85c;
+}
+
+.difficulty-text {
+  margin-left: 8px;
+  font-size: 0.95rem;
+  color: #e7dcc6;
+}
+
+/* =========================
+   FAIXA PREMIUM ABAIXO DO HERO
+========================= */
+
+.case-highlight-strip {
+  padding: 10px 0 70px;
+  position: relative;
+  z-index: 2;
+}
+
+.highlight-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.highlight-card {
+  padding: 24px 22px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.04),
+    rgba(255,255,255,0.015)
+  );
+  box-shadow:
+    0 10px 28px rgba(0,0,0,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+  backdrop-filter: blur(6px);
+  min-height: 145px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.highlight-label {
+  display: inline-block;
+  margin-bottom: 12px;
+  font-size: 0.72rem;
+  letter-spacing: 2px;
+  font-family: 'Cinzel', serif;
+  color: rgba(231,220,198,0.52);
+}
+
+.highlight-card p {
+  font-size: 1.08rem;
+  line-height: 1.45;
+  color: rgba(231,220,198,0.88);
+}
+
+
+/* =========================
+   SOBRE O CASO
+========================= */
+
+.case-about {
+  padding: 80px 0 100px;
+  position: relative;
+  z-index: 2;
+}
+
+.case-about-container {
+  max-width: 900px;
+}
+
+/* header */
+.case-about-header {
+  margin-bottom: 40px;
+}
+
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 3px;
+  color: rgba(231,220,198,0.45);
+}
+
+.case-about-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+/* conteúdo */
+.case-about-content p {
+  font-size: 1.35rem;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  color: rgba(231,220,198,0.85);
+}
+
+/* parágrafos de destaque */
+.highlight-paragraph {
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin: 30px 0;
+  color: #f1e6cd;
+  text-align: left;
+}
+
+
+/* =========================
+   DESAFIO DO JOGADOR
+========================= */
+
+.case-challenge {
+  padding: 100px 0 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.case-challenge-container {
+  max-width: 900px;
+}
+
+.challenge-box {
+  padding: 50px 40px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.05),
+    rgba(255,255,255,0.015)
+  );
+  box-shadow:
+    0 18px 50px rgba(0,0,0,0.35),
+    inset 0 1px 0 rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+  text-align: center;
+}
+
+/* título */
+.challenge-box h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.2rem;
+  margin: 14px 0 26px;
+  letter-spacing: 2px;
+}
+
+/* texto */
+.challenge-box p {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  color: rgba(231,220,198,0.85);
+}
+
+/* frases fortes */
+.challenge-highlight {
+  font-size: 1.45rem;
+  margin: 26px 0;
+  color: #f1e6cd;
+}
+
+/* botão */
+.challenge-actions {
+  margin-top: 30px;
+}
+
+
