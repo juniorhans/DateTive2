@@ -119,25 +119,23 @@
   grid-template-columns: repeat(2, 1fr);
   gap: 16px;
   margin-top: 10px;
-  padding: 24px;
-  border: 1px solid rgba(255,255,255,0.08);
-  background: linear-gradient(
-    135deg,
-    rgba(255,255,255,0.045),
-    rgba(255,255,255,0.015)
-  );
-  box-shadow:
-    0 12px 35px rgba(0,0,0,0.22),
-    inset 0 1px 0 rgba(255,255,255,0.03);
-  backdrop-filter: blur(8px);
 }
 
 .meta-item {
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  padding-bottom: 6px;
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  gap: 10px;
+  padding: 14px 12px;
+  border: 1px solid rgba(255,255,255,0.07);
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.025),
+    rgba(255,255,255,0.01)
+  );
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+  min-height: 100px;
+  height: 100%;
+  justify-content: space-between;
 }
 
 .meta-label {
@@ -359,8 +357,16 @@
 
 .meta-difficulty {
   display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.difficulty-stars {
+  display: flex;
+  gap: 4px;
   align-items: center;
-  gap: 6px;
+  flex-wrap: nowrap;
 }
 
 .star {
@@ -550,3 +556,266 @@
 }
 
 
+
+
+/* ######################################################## */
+/* ################ AQUELES QUE CONSOMEM MOBILE ########### */
+/* ######################################################## */
+
+@media (max-width: 768px) {
+
+  /* HERO */
+  .case-hero {
+    padding: 35px 0 45px;
+  }
+
+  .case-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .case-cover-column {
+    padding-top: 0;
+    display: flex;
+    justify-content: center;
+  }
+
+  .case-cover-frame {
+    width: 100%;
+    max-width: 320px;
+    transform: none;
+  }
+
+  .case-cover-frame:hover {
+    transform: none;
+  }
+
+  .case-info-column {
+    padding: 0;
+  }
+
+  .case-file-label {
+    font-size: 0.65rem;
+    letter-spacing: 1.6px;
+    margin-bottom: 14px;
+  }
+
+  .case-title {
+    font-size: 2.8rem;
+    line-height: 0.92;
+    margin-bottom: 18px;
+  }
+
+  .case-title span:first-child {
+    font-size: 2.1rem;
+    letter-spacing: 3px;
+  }
+
+  .case-title span:last-child {
+    font-size: 3rem;
+    letter-spacing: 1px;
+  }
+
+  .case-title::after {
+    width: 100px;
+    bottom: -10px;
+  }
+
+  .case-synopsis {
+    font-size: 1.05rem;
+    line-height: 1.55;
+    margin-bottom: 22px;
+  }
+
+  .case-quote {
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 16px 16px 16px 20px;
+    margin-bottom: 26px;
+  }
+
+  .case-quote::before {
+    font-size: 2.3rem;
+    top: -4px;
+  }
+
+  .case-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 26px;
+  }
+
+  .case-actions .btn-outline {
+    width: 100%;
+    min-width: unset;
+    height: 52px;
+    font-size: 0.85rem;
+  }
+
+  .case-meta-box {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 18px;
+    align-items: stretch;
+  }
+
+  .case-meta-box .meta-item {
+  min-width: 0;
+}
+
+.meta-tags {
+  gap: 5px;
+}
+
+.tag {
+  font-size: 0.58rem;
+  padding: 4px 8px;
+}
+
+.meta-players span,
+.difficulty-text,
+.meta-value {
+  font-size: 0.85rem;
+}
+
+  .meta-item {
+    padding-bottom: 10px;
+  }
+
+  .meta-tags {
+    gap: 6px;
+  }
+
+.tag {
+  font-size: 0.35rem;
+  padding: 4px 7px;
+  border-radius: 14px;
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.8px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.04);
+}
+
+  .meta-players span,
+  .difficulty-text,
+  .meta-value {
+    font-size: 0.92rem;
+  }
+
+  /* FAIXA PREMIUM */
+  .case-highlight-strip {
+    padding: 0 0 45px;
+  }
+
+  .highlight-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .highlight-card {
+    min-height: auto;
+    padding: 20px 18px;
+  }
+
+  .highlight-card p {
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+
+  /* SOBRE O CASO */
+  .case-about {
+    padding: 55px 0 70px;
+  }
+
+  .case-about-header {
+    margin-bottom: 28px;
+  }
+
+  .case-about-header h2 {
+    font-size: 2.4rem;
+    line-height: 0.95;
+  }
+
+  .section-label {
+    font-size: 0.62rem;
+    letter-spacing: 2.4px;
+  }
+
+  .case-about-content p {
+    font-size: 1.08rem;
+    line-height: 1.65;
+    margin-bottom: 18px;
+  }
+
+  .highlight-paragraph {
+    font-size: 1.28rem;
+    margin: 22px 0;
+  }
+
+  /* DESAFIO */
+  .case-challenge {
+    padding: 70px 0 80px;
+  }
+
+  .challenge-box {
+    padding: 34px 20px;
+  }
+
+  .challenge-box h2 {
+    font-size: 2.3rem;
+    line-height: 0.95;
+    margin: 14px 0 22px;
+  }
+
+  .challenge-box p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .challenge-highlight {
+    font-size: 1.2rem;
+    margin: 22px 0;
+  }
+
+  .challenge-actions .btn-outline {
+    width: 100%;
+    min-width: unset;
+    height: 52px;
+    font-size: 0.85rem;
+  }
+
+  /* CTA FINAL */
+  .case-final-cta {
+    padding: 75px 0 95px;
+  }
+
+  .case-final-cta h2 {
+    font-size: 2.5rem;
+    line-height: 0.95;
+    margin: 16px 0 24px;
+  }
+
+  .case-final-cta p {
+    font-size: 1.08rem;
+    line-height: 1.65;
+  }
+
+  .final-highlight {
+    font-size: 1.25rem;
+    margin: 26px 0 10px;
+  }
+
+  .final-actions {
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 28px;
+  }
+
+  .final-actions .btn-outline {
+    width: 100%;
+    min-width: unset;
+    height: 52px;
+    font-size: 0.85rem;
+  }
+}
