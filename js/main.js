@@ -53,3 +53,27 @@ const revealObserver = new IntersectionObserver((entries) => {
 revealElements.forEach((el) => {
   revealObserver.observe(el);
 });
+
+
+/* MENU MOBILE */
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileMenu = document.querySelector(".mobile-menu");
+const mobileOverlay = document.querySelector(".mobile-menu-overlay");
+const closeMenu = document.querySelector(".close-menu");
+
+if (menuToggle && mobileMenu && mobileOverlay && closeMenu) {
+  menuToggle.addEventListener("click", () => {
+    mobileMenu.classList.add("active");
+    mobileOverlay.classList.add("active");
+  });
+
+  closeMenu.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+    mobileOverlay.classList.remove("active");
+  });
+
+  mobileOverlay.addEventListener("click", () => {
+    mobileMenu.classList.remove("active");
+    mobileOverlay.classList.remove("active");
+  });
+}
