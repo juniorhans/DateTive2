@@ -31,78 +31,62 @@
     position: relative;
   }
 
-  /* =========================
-     NAVBAR MOBILE
-  ========================= */
-  .nav-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    padding: 12px 0;
-    gap: 12px;
-  }
+ /* =========================
+   NAVBAR MOBILE
+========================= */
+.nav-wrapper {
+  display: grid;
+  grid-template-columns: 42px 1fr 42px;
+  align-items: center;
+  padding: 12px 0;
+  gap: 10px;
+}
 
-  .logo-area {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex: 1;
-    min-width: 0;
-  }
+.logo-area {
+  display: contents;
+}
 
-  .logo-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.site-logo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  justify-self: start;
+}
 
-  .site-logo {
-    width: 68px;
-    height: 68px;
-    object-fit: contain;
-    flex-shrink: 0;
-  }
+.logo-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-  .logo-title {
-    font-size: 1.9rem;
-    line-height: 1;
-  }
+.logo-title {
+  font-size: 1.9rem;
+  line-height: 1;
+  text-align: center;
+  margin: 0;
+}
 
-  .logo-subtitle {
-    font-size: 0.52rem;
-    letter-spacing: 1.8px;
-    margin-top: 3px;
-  }
+.main-nav {
+  display: none;
+}
 
-  .main-nav {
-    display: none;
-  }
+.profile-btn {
+  display: none;
+}
 
-  .profile-btn {
-    display: none;
-  }
+.nav-actions {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: auto;
+  height: auto;
+  position: static;
+}
 
-  .nav-actions {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    width: auto;
-    height: auto;
-    position: static;
-    flex-shrink: 02;
-  }
-
-  .menu-toggle {
-    display: flex;
-    width: 32px;
-    height: 32px;
-    flex-shrink: 0;
-  }
-
-  .menu-toggle span {
-  width: 14px;
-  height: 2px;
+.menu-toggle {
+  display: flex;
+  width: 42px;
+  height: 42px;
 }
 
   /* =========================
@@ -111,6 +95,7 @@
   .hero {
     height: 240px;
     margin-bottom: 20px;
+    margin-top: 20px;
     padding: 0;
   }
 
@@ -382,4 +367,22 @@
     font-size: 1.1rem;
     line-height: 1.35;
   }
+
+
+  .floating-help-btn {
+  display: flex;
+  width: 56px;
+  height: 56px;
+  right: 16px;
+  bottom: 16px;
+}
+
+.chat-bubble-icon {
+  width: 22px;
+  height: 18px;
+}
+
+
+
+
 }
