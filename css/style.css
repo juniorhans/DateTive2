@@ -1361,3 +1361,880 @@ a {
   border-radius: 999px;
   box-shadow: 0 5px 0 #d4c4a8;
 }
+
+
+
+/* =========================
+   SEÇÃO DE PREÇOS (PACKS)
+========================= */
+
+.pricing-section {
+  padding: 60px 0 80px;
+  position: relative;
+}
+
+.pricing-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.pricing-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  color: var(--paper-light);
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px;
+}
+
+.pricing-header p {
+  font-size: 1.3rem;
+  color: rgba(227, 215, 192, 0.8);
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: stretch; /* Garante que todos os cards tenham a mesma altura base */
+}
+
+/* Base do Card */
+.pricing-card {
+  background: #13110e;
+  border: 1px solid rgba(212, 196, 168, 0.15);
+  padding: 34px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(212, 196, 168, 0.3);
+}
+
+/* Textos do Card */
+.pricing-card h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  color: #e3d7c0;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.pricing-subtitle {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: rgba(212, 196, 168, 0.5);
+  display: block;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgba(212, 196, 168, 0.1);
+  padding-bottom: 14px;
+}
+
+/* Valores */
+.pricing-value {
+  margin-bottom: 24px;
+  min-height: 80px; /* Alinha os preços mesmo quando não há desconto */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.price-original {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  color: rgba(212, 196, 168, 0.4);
+  text-decoration: line-through;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.discount-tag {
+  background: rgba(162, 140, 99, 0.2);
+  color: #c9b48f;
+  padding: 2px 6px;
+  border-radius: 2px;
+  font-size: 0.75rem;
+  text-decoration: none;
+  border: 1px solid rgba(162, 140, 99, 0.4);
+}
+
+.price-current {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.2rem;
+  line-height: 1;
+  color: var(--paper-light);
+  margin-bottom: 6px;
+}
+
+.price-savings {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  color: #a28c63;
+}
+
+/* Lista de Vantagens */
+.pricing-features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 34px;
+  flex-grow: 1; /* Empurra o botão para o fundo */
+}
+
+.pricing-features li {
+  font-size: 1.15rem;
+  color: rgba(212, 196, 168, 0.8);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.pricing-features li::before {
+  content: '✓';
+  color: #a28c63;
+  font-weight: bold;
+}
+
+/* Botão ajustado para ocupar a largura total do card */
+.pricing-card .btn-outline {
+  width: 100%;
+  min-width: unset;
+}
+
+/* =========================
+   CARD DESTACADO (MESTRE)
+========================= */
+.pricing-card.highlighted {
+  border: 2px solid #a28c63; /* Borda dourada mais forte */
+  background: linear-gradient(to bottom, #1d1813, #11100d);
+  transform: scale(1.05); /* Deixa o card levemente maior */
+  z-index: 2;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6), inset 0 0 20px rgba(162, 140, 99, 0.05);
+}
+
+.pricing-card.highlighted:hover {
+  transform: scale(1.05) translateY(-6px);
+}
+
+.badge-best-value {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #a28c63;
+  color: #11100d;
+  padding: 6px 16px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.pricing-card.highlighted .btn-outline {
+  background: #3b342c; /* Botão ligeiramente mais destacado */
+  border-color: #a28c63;
+}
+
+/* Rodapé de Segurança */
+.pricing-footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.pricing-footer p {
+  font-size: 1.1rem;
+  color: #c9b48f;
+  margin-bottom: 6px;
+}
+
+.pricing-footer span {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: rgba(212, 196, 168, 0.5);
+}
+
+
+/* Rótulo pequeno acima do título */
+.section-label {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  color: #a28c63;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+/* Efeito de carimbo na imagem (opcional, mas fica incrível) */
+.stamp-overlay {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 4px solid #7a1f1f;
+  color: #7a1f1f;
+  padding: 5px 15px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  transform: rotate(15deg);
+  opacity: 0.7;
+  border-radius: 4px;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* Melhorando o visual dos cards de passo */
+.how-card {
+  transition: all 0.4s ease;
+  border: 1px solid rgba(212, 196, 168, 0.08);
+}
+
+.how-card:hover {
+  border-color: rgba(162, 140, 99, 0.3);
+  background: rgba(255, 255, 255, 0.06);
+  transform: translateY(-5px);
+}
+
+.how-step {
+  color: #a28c63; /* Cor dourada para o passo */
+  font-weight: 700;
+}
+
+/* =========================
+   MELHORIAS: CASOS EM DESTAQUE
+========================= */
+
+/* Alinhamento do novo cabeçalho */
+.title-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-group h2 {
+  margin-top: -5px; /* Compensa o espaço do label acima */
+}
+
+/* Link "Acessar Arquivo Morto" estilizado */
+.view-all-link {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  letter-spacing: 1.5px;
+  color: #a28c63;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(162, 140, 99, 0.3);
+  padding: 10px 20px;
+  background: rgba(162, 140, 99, 0.05);
+  transition: all 0.3s ease;
+}
+
+.view-all-link:hover {
+  background: rgba(162, 140, 99, 0.15);
+  color: #e3d7c0;
+  border-color: #a28c63;
+}
+
+.view-all-link .arrow {
+  transition: transform 0.3s ease;
+}
+
+.view-all-link:hover .arrow {
+  transform: translateX(4px);
+}
+
+/* Efeito de Carimbo no Card (Dossier Stamp) */
+.dossier-stamp {
+  position: absolute;
+  top: 30px;
+  left: -15px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  padding: 4px 12px;
+  transform: rotate(-12deg);
+  z-index: 10;
+  border: 3px solid;
+  border-radius: 4px;
+  opacity: 0.85;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Variações de Carimbo */
+.stamp-free {
+  color: #2b5c33;
+  border-color: #2b5c33;
+}
+
+.stamp-unsolved {
+  color: #8a2a2a;
+  border-color: #8a2a2a;
+}
+
+.stamp-classified {
+  color: #b58500;
+  border-color: #b58500;
+}
+
+/* Ajuste sutil na imagem do card para não brigar com o carimbo */
+.case-card .case-photo {
+  margin-top: 15px;
+}
+
+/* =========================
+   A EXPERIÊNCIA (LIFESTYLE)
+========================= */
+
+.experience-section {
+  padding: 60px 0 80px;
+  background: #0b0b09;
+  position: relative;
+}
+
+.experience-title {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.experience-title h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  color: var(--paper-light);
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.8);
+  margin-bottom: 15px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.experience-title p {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.3rem;
+  color: rgba(227, 215, 192, 0.82);
+  line-height: 1.4;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 60px; /* Mais espaço para respirar entre as fotos */
+}
+
+.experience-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.experience-card.reverse {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* Inverte a ordem apenas no desktop */
+.experience-card.reverse .experience-image {
+  order: 2;
+}
+.experience-card.reverse .experience-text {
+  order: 1;
+}
+
+.experience-image {
+  position: relative;
+  border: 1px solid rgba(212, 196, 168, 0.15);
+  padding: 10px;
+  background: #1a1816;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+  transform: rotate(-1deg);
+  transition: transform 0.4s ease;
+}
+
+.experience-card:nth-child(even) .experience-image {
+  transform: rotate(1.5deg);
+}
+
+.experience-image:hover {
+  transform: rotate(0deg) scale(1.02);
+}
+
+.experience-image img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  filter: sepia(0.2) contrast(1.1) brightness(0.9); /* Mantém o tom Noir nas fotos reais */
+  display: block;
+}
+
+.experience-tag {
+  display: inline-block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #a28c63;
+  border-bottom: 1px solid rgba(162, 140, 99, 0.3);
+  padding-bottom: 6px;
+  margin-bottom: 16px;
+}
+
+.experience-text h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  line-height: 1;
+  color: #e3d7c0;
+  margin-bottom: 16px;
+}
+
+.experience-text p {
+  font-size: 1.3rem;
+  line-height: 1.5;
+  color: rgba(227, 215, 192, 0.85);
+}
+
+
+/* =========================
+   O QUE OS CASAIS DIZEM (DEPOIMENTOS)
+========================= */
+
+.testimonials-section {
+  padding: 80px 0;
+  position: relative;
+  background: #0b0b09;
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.testimonials-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3.5rem;
+  letter-spacing: 2px;
+  color: var(--paper-light);
+  text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.8);
+  margin-bottom: 10px;
+}
+
+.testimonials-header p {
+  font-size: 1.3rem;
+  color: rgba(227, 215, 192, 0.8);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+/* Card do Depoimento */
+.testimonial-card {
+  background: #13110e;
+  border: 1px solid rgba(212, 196, 168, 0.12);
+  padding: 30px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(162, 140, 99, 0.4); /* Borda dourada ao passar o mouse */
+}
+
+/* Aspas Gigantes Decorativas */
+.quote-mark {
+  font-family: serif;
+  font-size: 5rem;
+  color: rgba(162, 140, 99, 0.15); /* Dourado muito suave */
+  line-height: 0;
+  position: absolute;
+  top: 45px;
+  left: 20px;
+  pointer-events: none;
+}
+
+/* Estrelas */
+.stars {
+  color: #a28c63; /* Dourado da paleta */
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+  position: relative;
+  z-index: 2;
+}
+
+/* Texto do Depoimento */
+.testimonial-text {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: rgba(227, 215, 192, 0.9);
+  flex-grow: 1; /* Faz o rodapé do card ficar sempre alinhado embaixo */
+  margin-bottom: 24px;
+  position: relative;
+  z-index: 2;
+  font-style: italic;
+}
+
+/* Rodapé do Card (Autor) */
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid rgba(212, 196, 168, 0.1);
+  padding-top: 20px;
+}
+
+/* Ícone de Iniciais */
+.author-avatar {
+  width: 44px;
+  height: 44px;
+  background: #2b2620;
+  border: 1px solid rgba(162, 140, 99, 0.3);
+  color: #e3d7c0;
+  border-radius: 50%; /* Mantém redondo como no seu print */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.author-info strong {
+  font-family: 'Cinzel', serif;
+  font-size: 0.95rem;
+  color: #e3d7c0;
+  letter-spacing: 0.5px;
+}
+
+.author-info span {
+  font-size: 0.85rem;
+  color: rgba(212, 196, 168, 0.5);
+}
+
+
+/* =========================
+   CTA FINAL: CONVOCAÇÃO
+========================= */
+
+.final-cta-section {
+  padding: 100px 0 120px;
+  background: radial-gradient(circle at center, #1a1816 0%, #11100d 100%);
+}
+
+.cta-folder-wrapper {
+  position: relative;
+  background: linear-gradient(135deg, #1d1b18 0%, #141210 100%);
+  border: 1px solid rgba(162, 140, 99, 0.2);
+  padding: 80px 60px;
+  text-align: center;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.6);
+  overflow: hidden;
+}
+
+/* Efeito de carimbo 'URGENTE' no canto */
+.urgent-stamp {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem;
+  color: #7a1f1f;
+  border: 4px solid #7a1f1f;
+  padding: 5px 15px;
+  transform: rotate(15deg);
+  opacity: 0.6;
+  border-radius: 4px;
+  letter-spacing: 2px;
+}
+
+.cta-content {
+  max-width: 750px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 5;
+}
+
+.cta-content h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4.5rem;
+  line-height: 0.9;
+  letter-spacing: 2px;
+  color: var(--paper-light);
+  margin-bottom: 25px;
+  text-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.cta-content p {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: rgba(227, 215, 192, 0.85);
+  margin-bottom: 45px;
+}
+
+/* Botão de Destaque Máximo */
+.cta-main-btn {
+  display: inline-block;
+  padding: 22px 45px;
+  background: #a28c63; /* Dourado sólido */
+  color: #11100d;
+  font-family: 'Cinzel', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(162, 140, 99, 0.3);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.cta-main-btn:hover {
+  transform: scale(1.05) translateY(-5px);
+  background: #e3d7c0;
+  box-shadow: 0 15px 35px rgba(162, 140, 99, 0.4);
+}
+
+.cta-subtext {
+  display: block;
+  margin-top: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: rgba(212, 196, 168, 0.4);
+}
+
+/* Decoração do distintivo */
+.cta-decoration {
+  position: absolute;
+  left: -50px;
+  bottom: -30px;
+  opacity: 0.1;
+  transform: rotate(-15deg);
+  pointer-events: none;
+}
+
+.floating-badge {
+  width: 280px;
+}
+
+
+/* =========================
+   FOOTER: RELATÓRIO FINAL
+========================= */
+
+/* =========================
+   FOOTER SIMPLIFICADO
+========================= */
+
+.site-footer {
+  background: #0b0a08;
+  padding: 60px 0 0;
+  border-top: 1px solid rgba(212, 196, 168, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 50px;
+}
+
+/* Marca e Logo */
+.footer-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.footer-simple-logo {
+  width: 45px;
+  height: auto;
+}
+
+.footer-simple-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: 1px;
+  color: #e3d7c0;
+}
+
+/* Redes Sociais */
+.footer-socials {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-socials a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.9rem;
+  color: rgba(212, 196, 168, 0.6);
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #a28c63;
+}
+
+/* Newsletter */
+.footer-news-area h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 1rem;
+  color: #e3d7c0;
+  margin-bottom: 15px;
+}
+
+.simple-newsletter {
+  display: flex;
+  gap: 10px;
+}
+
+.simple-newsletter input {
+  padding: 12px 15px;
+  background: #1a1816;
+  border: 1px solid rgba(212, 196, 168, 0.2);
+  color: #e3d7c0;
+  width: 250px;
+  font-family: 'Cormorant Garamond', serif;
+}
+
+.simple-newsletter button {
+  padding: 0 20px;
+  background: #a28c63;
+  color: #11100d;
+  border: none;
+  font-family: 'Cinzel', serif;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.simple-newsletter button:hover {
+  background: #e3d7c0;
+}
+
+/* Copyright */
+.footer-copyright-simple {
+  border-top: 1px solid rgba(212, 196, 168, 0.05);
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-copyright-simple p {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  color: rgba(212, 196, 168, 0.3);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .simple-newsletter {
+    flex-direction: column;
+  }
+  
+  .simple-newsletter input {
+    width: 100%;
+  }
+}
+
+/* =========================
+   FOOTER COMPACTO (3X MENOR)
+========================= */
+
+.site-footer {
+  background: #0b0a08;
+  padding: 20px 0 0; /* Reduzido de 60px para 20px */
+  border-top: 1px solid rgba(212, 196, 168, 0.1);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Alinhado ao centro para economizar espaço */
+  padding-bottom: 20px; /* Reduzido de 50px para 20px */
+}
+
+/* Marca e Logo */
+.footer-logo-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px; /* Reduzido de 20px para 10px */
+}
+
+.footer-simple-logo {
+  width: 35px; /* Ligeiramente menor */
+  height: auto;
+}
+
+.footer-simple-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem; /* Reduzido de 2.2rem */
+  letter-spacing: 1px;
+  color: #e3d7c0;
+}
+
+/* Redes Sociais */
+.footer-socials {
+  display: flex;
+  gap: 15px;
+}
+
+.footer-socials a {
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem; /* Reduzido */
+  color: rgba(212, 196, 168, 0.6);
+}
+
+/* Newsletter Compacta */
+.footer-news-area h3 {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: #e3d7c0;
+  margin-bottom: 8px; /* Reduzido de 15px */
+}
+
+.simple-newsletter input {
+  padding: 8px 12px; /* Reduzido */
+  font-size: 0.9rem;
+  width: 200px; /* Mais estreito */
+}
+
+.simple-newsletter button {
+  padding: 0 15px;
+  font-size: 0.8rem;
+}
+
+/* Copyright */
+.footer-copyright-simple {
+  padding: 12px 0; /* Reduzido de 20px */
+}
