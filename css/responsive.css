@@ -384,10 +384,7 @@
 
 /* Responsivo para Tablets */
 @media (max-width: 1100px) {
-  .pricing-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-    gap: 30px 20px;
-  }
+
   
   /* Remove o scale no tablet para não sobrepor errado */
   .pricing-card.highlighted {
@@ -399,16 +396,51 @@
   }
 }
 
-/* Responsivo para Celulares */
+/* =========================
+   CARROSSEL DE PACKS (MOBILE) CORRIGIDO
+========================= */
 @media (max-width: 768px) {
+  
   .pricing-header h2 {
     font-size: 2.6rem;
   }
-  
+
+  /* 1. Transforma o Grid em Carrossel Horizontal */
   .pricing-grid {
-    grid-template-columns: 1fr; /* 1 coluna empilhada */
-    gap: 35px;
-    padding: 0 10px;
+    display: flex !important; 
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 10px 0 40px; 
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; 
+  }
+
+  .pricing-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* 2. A PARTE QUE FALTAVA: Força o card a ocupar 85% da tela */
+  .pricing-card {
+    flex: 0 0 85% !important; 
+    width: 85% !important;
+    min-width: 85% !important;
+    max-width: 85% !important;
+    scroll-snap-align: center;
+    height: auto; 
+    transform: none !important; 
+  }
+
+  .pricing-card.highlighted {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  }
+
+  /* 3. Remove os efeitos visuais que causam bugs no celular */
+  .pricing-card:hover,
+  .pricing-card.highlighted:hover {
+    transform: none !important; 
   }
 }
 
