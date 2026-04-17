@@ -1,15 +1,20 @@
+/* ==========================================================================
+   1. EFEITOS SONOROS (CASOS)
+   ========================================================================== */
 const paperHoverSound = document.getElementById("paperHoverSound");
-const caseCards = document.querySelectorAll(".case-card");
+// Atualizado para a nova classe dos cartões modernos
+const caseCards = document.querySelectorAll(".case-card-modern");
 
+// Carrega o áudio no primeiro clique para evitar bloqueios do navegador
 document.addEventListener("click", () => {
-  paperHoverSound.load();
+  if (paperHoverSound) paperHoverSound.load();
 }, { once: true });
 
 let hoverCooldown = false;
 
 caseCards.forEach(card => {
   card.addEventListener("mouseenter", () => {
-    if (hoverCooldown) return;
+    if (hoverCooldown || !paperHoverSound) return;
 
     paperHoverSound.currentTime = 0;
     paperHoverSound.volume = 0.15;
@@ -17,27 +22,17 @@ caseCards.forEach(card => {
 
     hoverCooldown = true;
 
+    // Pequeno delay para não sobrecarregar o som se o utilizador mover o rato rápido
     setTimeout(() => {
       hoverCooldown = false;
     }, 10);
   });
 });
 
-const slides = document.querySelectorAll(".hero-slide");
 
-let currentSlide = 0;
-
-function changeSlide() {
-  slides[currentSlide].classList.remove("active");
-
-  currentSlide = (currentSlide + 1) % slides.length;
-
-  slides[currentSlide].classList.add("active");
-}
-
-setInterval(changeSlide, 4000);
-
-/* ANIMAÇÃO AO ENTRAR NA TELA */
+/* ==========================================================================
+   2. ANIMAÇÕES DE SCROLL (REVEAL)
+   ========================================================================== */
 const revealElements = document.querySelectorAll(".reveal-up");
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -55,7 +50,9 @@ revealElements.forEach((el) => {
 });
 
 
-/* MENU MOBILE */
+/* ==========================================================================
+   3. MENU MOBILE
+   ========================================================================== */
 const menuToggle = document.querySelector(".menu-toggle");
 const mobileMenu = document.querySelector(".mobile-menu");
 const mobileOverlay = document.querySelector(".mobile-menu-overlay");

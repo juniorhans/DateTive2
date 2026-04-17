@@ -1,412 +1,203 @@
+/* ==========================================================================
+   1. RESPONSIVO PARA TABLETS (Telas entre 769px e 1100px)
+   ========================================================================== */
 @media (max-width: 1100px) {
-  .hero-panel {
-    grid-template-columns: 1fr;
-  }
-
-  .cases-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .info-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .footer-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-  .container {
-    width: 94%;
-  }
-
-  .topbar {
-    position: relative;
-  }
-
- /* =========================
-   NAVBAR MOBILE
-========================= */
-.nav-wrapper {
-  display: grid;
-  grid-template-columns: 42px 1fr 42px;
-  align-items: center;
-  padding: 12px 0;
-  gap: 10px;
-}
-
-.logo-area {
-  display: contents;
-}
-
-.site-logo {
-  width: 42px;
-  height: 42px;
-  object-fit: contain;
-  justify-self: start;
-}
-
-.logo-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.logo-title {
-  font-size: 1.9rem;
-  line-height: 1;
-  text-align: center;
-  margin: 0;
-}
-
-.main-nav {
-  display: none;
-}
-
-.profile-btn {
-  display: none;
-}
-
-.nav-actions {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: auto;
-  height: auto;
-  position: static;
-}
-
-.menu-toggle {
-  display: flex;
-  width: 42px;
-  height: 42px;
-}
-
-  /* =========================
-     HERO
-  ========================= */
-  .hero {
-    height: 240px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    padding: 0;
-  }
-
-  .hero-wrapper {
-    width: 94%;
-    height: 240px;
-    max-width: none;
-  }
-
-  .hero-content {
-    max-width: 85%;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
-
-  .hero-content h2 {
-    font-size: 1.8rem;
-    line-height: 0.95;
-    margin-bottom: 8px;
-  }
-
-  .hero-content p {
-    font-size: 0.95rem;
-    line-height: 1.3;
-    max-width: 100%;
-    margin-bottom: 0;
-  }
-
-  /* =========================
-     CASOS
-  ========================= */
-  .featured-cases {
-    padding: 28px 0 20px;
-  }
-
-  .section-title-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-    margin-bottom: 20px;
-  }
-
-  .section-title-row h2 {
-    font-size: 2rem;
-  }
-
-  .section-title-row a {
-    font-size: 0.8rem;
-  }
-
-  .cases-grid {
-    display: flex;
-    flex-wrap: nowrap;
-    gap: 14px;
-    overflow-x: auto;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    padding: 0 4px 10px;
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .cases-grid::-webkit-scrollbar {
-    display: none;
-  }
-
-  .case-card {
-    flex: 0 0 82%;
-    min-width: 82%;
-    max-width: 82%;
-    scroll-snap-align: start;
-    transform: none;
-    padding: 12px 12px 18px;
-  }
-
-  .case-content h3 {
-    font-size: 1.5rem;
-    line-height: 1;
-  }
-
-  .case-id {
-    font-size: 0.62rem;
-    margin-bottom: 6px;
-  }
-
-  .case-content p {
-    font-size: 1rem;
-    line-height: 1.25;
-    min-height: auto;
-    margin-bottom: 14px;
-  }
-
-  .case-actions {
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-
-  .case-btn {
-    min-width: 140px;
-    height: 44px;
-    font-size: 0.72rem;
-    padding: 0 12px;
-  }
-
-  .price-tag {
-    min-width: 105px;
-    height: 48px;
-    font-size: 1.3rem;
-    padding: 0 16px 0 26px;
-  }
-
-  .price-tag::before {
-    left: 8px;
-    width: 8px;
-    height: 8px;
-  }
-
-  .price-tag::after {
-    left: -16px;
-    width: 18px;
-  }
-
-  .clip {
-    width: 28px;
-    height: 12px;
-    top: 5px;
-    right: 12px;
-    border-width: 2px;
-  }
-
-  .case-overlay {
-    left: 6px;
-    right: 6px;
-    bottom: -100px;
-    padding: 10px 10px 10px;
-    gap: 6px 8px;
-  }
-
-  .case-overlay span {
-    font-size: 0.58rem;
-    padding: 4px 6px;
-  }
-
-  /* =========================
-     INFO
-  ========================= */
-  .info-grid {
-    gap: 18px;
-    padding: 20px 0 30px;
-  }
-
-  .info-card {
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: auto;
-    padding: 18px;
-  }
-
-  .info-card img {
-    width: 110px;
-  }
-
-  .info-card h3 {
-    font-size: 2rem;
-  }
-
-  .info-card p {
-    font-size: 1.2rem;
-  }
-
-  /* =========================
-     FOOTER
-  ========================= */
-  .site-footer {
-    padding-top: 28px;
-    padding-bottom: 20px;
-  }
-
-  .footer-grid {
-    gap: 22px;
-    padding-bottom: 20px;
-  }
-
-  .footer-brand h2 {
-    font-size: 2.2rem;
-  }
-
-  .footer-quote p {
-    font-size: 1.35rem;
-  }
-
-  .footer-newsletter form {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .footer-newsletter input,
-  .footer-newsletter button {
-    width: 100%;
-  }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 12px;
-    text-align: center;
-  }
-
-  .socials {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  /* =========================
-     COMO FUNCIONA
-  ========================= */
-  .how-it-works {
-    padding: 35px 0 40px;
-  }
-
-  .how-title {
-    margin-bottom: 28px;
-  }
-
-  .how-title h2 {
-    font-size: 2.4rem;
-  }
-
-  .how-title p {
-    font-size: 1rem;
-    line-height: 1.35;
-    max-width: 100%;
-  }
-
-  .how-list {
-    gap: 20px;
-  }
-
-  .how-card,
-  .how-card.reverse {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    padding: 14px;
-  }
-
-  .how-card.reverse .how-image,
-  .how-card.reverse .how-text {
-    order: unset;
-  }
-
-  .how-image {
-    transform: none;
-  }
-
-  .how-image img {
-    height: 200px;
-  }
-
-  .how-step {
-    font-size: 0.7rem;
-    letter-spacing: 1.5px;
-    margin-bottom: 8px;
-  }
-
-  .how-text h3 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-  }
-
-  .how-text p {
-    font-size: 1.1rem;
-    line-height: 1.35;
-  }
-
-
-  .floating-help-btn {
-  display: flex;
-  width: 56px;
-  height: 56px;
-  right: 16px;
-  bottom: 16px;
-}
-
-.chat-bubble-icon {
-  width: 22px;
-  height: 18px;
-}
-
-/* Responsivo para Tablets */
-@media (max-width: 1100px) {
-
   
-  /* Remove o scale no tablet para não sobrepor errado */
+  /* --- Blocos Gerais --- */
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Catálogo Moderno (Casos) --- */
+  .cases-grid-modern {
+    grid-template-columns: repeat(2, 1fr); /* 2 Colunas no Tablet */
+  }
+
+  /* --- Preços & Packs --- */
   .pricing-card.highlighted {
-    transform: scale(1);
+    transform: scale(1); /* Remove o destaque de tamanho no tablet para não quebrar o layout */
   }
   
   .pricing-card.highlighted:hover {
     transform: translateY(-6px);
   }
+
+  /* --- Depoimentos --- */
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 Colunas no Tablet */
+  }
 }
 
-/* =========================
-   CARROSSEL DE PACKS (MOBILE) CORRIGIDO
-========================= */
+/* ==========================================================================
+   2. RESPONSIVO PARA CELULARES (Telas menores que 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
   
+  /* --- Configurações Gerais da Tela --- */
+  .container {
+    width: 94%;
+  }
+
+  /* --- Navbar & Topo --- */
+  .topbar {
+    position: relative;
+  }
+
+  .nav-wrapper {
+    display: grid;
+    grid-template-columns: 42px 1fr 42px;
+    align-items: center;
+    padding: 12px 0;
+    gap: 10px;
+  }
+
+  .logo-area {
+    display: contents;
+  }
+
+  .site-logo {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+    justify-self: start;
+  }
+
+  .logo-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .logo-title {
+    font-size: 1.9rem;
+    line-height: 1;
+    text-align: center;
+    margin: 0;
+  }
+
+  .main-nav, 
+  .profile-btn {
+    display: none; /* Esconde menu e botão de perfil no mobile */
+  }
+
+  .nav-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: auto;
+    height: auto;
+    position: static;
+  }
+
+  .menu-toggle {
+    display: flex;
+    width: 42px;
+    height: 42px;
+  }
+
+  /* --- Hero Section (Nova Full Bleed) --- */
+  .hero-full-bleed {
+    flex-direction: column;
+    min-height: auto;
+    padding-bottom: 50px;
+  }
+
+  .hero-image-full {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    order: 1; /* Coloca a imagem no topo no telemóvel */
+  }
+
+  .hero-side-gradient {
+    /* Muda o gradiente de lateral para inferior no ecrã pequeno */
+    background: linear-gradient(to top, #11100d 0%, transparent 100%);
+  }
+
+  .hero-content-wrapper {
+    order: 2; /* Coloca o texto por baixo da imagem */
+    padding-top: 30px;
+    text-align: center;
+  }
+
+  .hero-text-area h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-text-area p {
+    font-size: 1.15rem;
+    margin: 0 auto 30px;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .cta-main-btn, .btn-outline-hero {
+    width: 100%;
+  }
+
+  /* --- Catálogo Moderno (Carrossel Horizontal Deslizante) --- */
+.cases-grid-modern {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    gap: 16px;
+    padding: 10px 0 30px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    width: 100%; /* CORREÇÃO: Substituído 100vw por 100% */
+    max-width: 100%; 
+    box-sizing: border-box;
+  }
+
+.cases-grid-modern::-webkit-scrollbar {
+    display: none;
+  }
+
+.case-card-modern {
+    flex: 0 0 85% !important;
+    width: 85% !important;
+    scroll-snap-align: center;
+    transform: none !important;
+  }
+
+.case-card-modern:hover {
+    transform: none !important;
+  }
+
+  /* --- A Experiência (Lifestyle / Como Funciona) --- */
+  .experience-title h2 {
+    font-size: 2.6rem;
+  }
+  
+  .experience-card,
+  .experience-card.reverse {
+    grid-template-columns: 1fr; /* Empilha foto e texto */
+    gap: 24px;
+  }
+
+  .experience-card.reverse .experience-image {
+    order: 1; /* Força a imagem a ficar sempre acima do texto */
+  }
+  
+  .experience-card.reverse .experience-text {
+    order: 2;
+  }
+  
+  .experience-image {
+    transform: none !important; /* Remove a rotação da imagem para não cortar as bordas */
+  }
+
+  /* --- Preços & Packs (Carrossel Horizontal Deslizante) --- */
   .pricing-header h2 {
     font-size: 2.6rem;
   }
 
-  /* 1. Transforma o Grid em Carrossel Horizontal */
-  .pricing-grid {
+.pricing-grid {
     display: flex !important; 
     flex-wrap: nowrap !important;
     overflow-x: auto;
@@ -416,13 +207,15 @@
     padding: 10px 0 40px; 
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; 
+    width: 100%; /* CORREÇÃO: Substituído 100vw por 100% */
+    max-width: 100%; 
+    box-sizing: border-box; 
   }
 
   .pricing-grid::-webkit-scrollbar {
     display: none;
   }
 
-  /* 2. A PARTE QUE FALTAVA: Força o card a ocupar 85% da tela */
   .pricing-card {
     flex: 0 0 85% !important; 
     width: 85% !important;
@@ -437,62 +230,23 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
   }
 
-  /* 3. Remove os efeitos visuais que causam bugs no celular */
   .pricing-card:hover,
   .pricing-card.highlighted:hover {
     transform: none !important; 
   }
-}
 
-
-
-@media (max-width: 768px) {
-  .experience-title h2 {
-    font-size: 2.6rem;
-  }
-  
-  .experience-card,
-  .experience-card.reverse {
-    grid-template-columns: 1fr; /* Empilha foto e texto no celular */
-    gap: 24px;
-  }
-
-  /* Garante que a imagem fique em cima do texto no celular, mesmo nas invertidas */
-  .experience-card.reverse .experience-image {
-    order: 1;
-  }
-  .experience-card.reverse .experience-text {
-    order: 2;
-  }
-  
-  .experience-image {
-    transform: none !important; /* Tira a rotação no celular para economizar espaço de tela */
-  }
-}
-
-
-/* Responsivo para Tablets */
-@media (max-width: 1100px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr); /* Reduz para 2 colunas */
-  }
-}
-
-/* Responsivo para Celulares */
-@media (max-width: 768px) {
+  /* --- Depoimentos --- */
   .testimonials-header h2 {
     font-size: 2.6rem;
   }
   
   .testimonials-grid {
-    grid-template-columns: 1fr; /* 1 coluna no celular */
+    grid-template-columns: 1fr; /* Força os cards a formarem uma única coluna */
     gap: 20px;
     padding: 0 10px;
   }
-}
 
-
-@media (max-width: 768px) {
+  /* --- CTA Final (Convocação / Dossier) --- */
   .cta-folder-wrapper {
     padding: 60px 25px;
   }
@@ -516,7 +270,35 @@
     padding: 18px 20px;
     font-size: 0.95rem;
   }
-}
 
+  /* --- Footer Simplificado --- */
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+  }
+  
+  .simple-newsletter {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .simple-newsletter input {
+    width: 100%;
+  }
 
+  /* --- Botão Flutuante de Ajuda --- */
+  .floating-help-btn {
+    display: flex;
+    width: 56px;
+    height: 56px;
+    right: 16px;
+    bottom: 16px;
+  }
+
+  .chat-bubble-icon {
+    width: 22px;
+    height: 18px;
+  }
 }
