@@ -36,6 +36,8 @@ body {
   width: 100%;
 }
 
+
+
 .container {
   width: 90%;
   max-width: 1280px;
@@ -143,192 +145,157 @@ a {
   transform: translateY(0);
 }
 
+
+
+
+
+
+
+
+
+
 /* ==========================================================================
-   3. HEADER / TOPBAR E MENU MOBILE
+   3. HEADER / TOPBAR E MENU MOBILE (REMASTERIZADO)
    ========================================================================== */
 .topbar {
-  background: rgba(10, 9, 7, 0.95);
-  border-bottom: 1px solid rgba(212, 196, 168, 0.18);
+  background: rgba(11, 10, 8, 0.85); /* Levemente mais transparente */
+  backdrop-filter: blur(12px); /* Efeito vidro mais forte */
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(162, 140, 99, 0.15); /* Linha dourada suave */
   position: sticky;
   top: 0;
   z-index: 999;
-  backdrop-filter: blur(4px);
+  
+}
+
+/* Força o container do cabeçalho a ir de ponta a ponta */
+.topbar .container {
+  width: 100%;
+  max-width: 100%;
+  padding: 0 40px; /* Dá um pequeno respiro para não grudar exatamente no último pixel do monitor */
 }
 
 .nav-wrapper {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  min-height: 92px;
-  gap: 30px;
+  /* Alterado para flex-start para agrupar logo e menu no início */
+  justify-content: flex-start; 
+  min-height: 75px;
 }
 
+/* --- Logo --- */
 .logo-area {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 12px;
+  text-decoration: none;
 }
 
 .site-logo {
-  width: 78px;
-  height: 78px;
+  width: 48px; /* Logo mais delicada */
+  height: auto;
   object-fit: contain;
-  display: block;
-}
-
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
 }
 
 .logo-title {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 3rem;
+  font-size: 2.2rem;
   color: var(--paper-light);
   letter-spacing: 2px;
   line-height: 1;
 }
 
-.logo-subtitle {
-  font-family: 'Cinzel', serif;
-  font-size: 0.72rem;
-  color: var(--paper);
-  letter-spacing: 3px;
-  margin-top: 6px;
-}
-
+/* --- Menu Desktop com Animação --- */
 .main-nav {
   display: flex;
-  gap: 28px;
+  gap: 32px;
+  /* Margem à esquerda para desgrudar da logo */
+  margin-left: 60px; 
+  /* A "mágica": empurra todo o bloco seguinte (nav-actions) para a direita */
+  margin-right: auto; 
 }
 
 .main-nav a {
+  position: relative;
   font-family: 'Cinzel', serif;
-  font-size: 0.95rem;
-  color: var(--paper);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(227, 215, 192, 0.8);
   text-transform: uppercase;
-  transition: 0.3s;
+  letter-spacing: 1px;
+  padding: 8px 0;
+  transition: color 0.3s ease;
 }
 
 .main-nav a:hover {
-  color: #fff2d2;
+  color: var(--gold-soft);
 }
 
-.nav-actions {
-  position: relative;
-  width: 46px;
-  height: 46px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.profile-btn {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  border: 1px solid rgba(212, 196, 168, 0.22);
-  background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%), linear-gradient(to bottom, #2b221a, #1b1611);
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 10px;
-  cursor: pointer;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03), 0 6px 14px rgba(0,0,0,0.22);
-  transition: width 0.3s ease, background 0.25s ease, transform 0.25s ease;
-  padding: 0 14px;
-  overflow: hidden;
-  white-space: nowrap;
-  z-index: 20;
-}
-
-.profile-btn:hover {
-  width: 150px;
-  transform: translateY(-2px);
-  background: radial-gradient(circle at top, rgba(255,255,255,0.07), transparent 60%), linear-gradient(to bottom, #3b342c, #221b15);
-}
-
-.profile-icon {
-  position: relative;
-  min-width: 18px;
-  width: 18px;
-  height: 18px;
-  display: block;
-  flex-shrink: 0;
-}
-
-.profile-head {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  width: 7px;
-  height: 7px;
-  background: #e3d7c0;
-  border-radius: 50%;
-  transform: translateX(-50%);
-}
-
-.profile-body {
+/* Efeito de linha dourada deslizando em baixo do link */
+.main-nav a::after {
+  content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
-  width: 14px;
-  height: 8px;
-  border: 2px solid #e3d7c0;
-  border-bottom: none;
-  border-radius: 10px 10px 0 0;
-  transform: translateX(-50%);
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--gold-soft);
+  transition: width 0.3s ease;
 }
 
-.profile-text {
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* --- Área de Login (Direita) --- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.login-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  border: 1px solid rgba(162, 140, 99, 0.3);
+  border-radius: 4px;
+  color: var(--paper-light);
   font-family: 'Cinzel', serif;
-  font-size: 0.82rem;
+  font-size: 0.85rem;
   letter-spacing: 1px;
-  color: #e3d7c0;
-  opacity: 0;
-  transform: translateX(8px);
-  transition: opacity 0.22s ease, transform 0.22s ease;
-  pointer-events: none;
+  transition: all 0.3s ease;
 }
 
-.profile-btn:hover .profile-text {
-  opacity: 1;
-  transform: translateX(0);
+.login-btn:hover {
+  background: rgba(162, 140, 99, 0.1);
+  border-color: var(--gold-soft);
+  color: var(--gold-soft);
 }
 
-/* Menu Mobile (Hamburguer) */
+.login-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* --- Botão Menu Mobile & Menu Oculto --- */
 .menu-toggle {
   display: none;
-  width: 46px;
-  height: 46px;
-  border-radius: 50%;
-  border: 1px solid rgba(212, 196, 168, 0.22);
-  background: radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 60%), linear-gradient(to bottom, #2b221a, #1b1611);
-  align-items: center;
-  justify-content: center;
+  background: transparent;
+  border: none;
   flex-direction: column;
-  gap: 4px;
+  gap: 5px;
   cursor: pointer;
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.03), 0 6px 14px rgba(0,0,0,0.22);
-  transition: 0.25s ease;
-  padding: 0;
-}
-
-.menu-toggle:hover {
-  transform: translateY(-2px);
-  background: radial-gradient(circle at top, rgba(255,255,255,0.07), transparent 60%), linear-gradient(to bottom, #3b342c, #221b15);
+  padding: 5px;
 }
 
 .menu-toggle span {
-  width: 18px;
+  width: 24px;
   height: 2px;
-  background: #e3d7c0;
-  border-radius: 999px;
-  display: block;
+  background: var(--paper-light);
+  transition: 0.3s ease;
 }
 
 .mobile-menu {
@@ -340,21 +307,19 @@ a {
   height: 100vh;
   background: linear-gradient(to bottom, #16120f, #0e0c0a);
   border-left: 1px solid rgba(212, 196, 168, 0.14);
-  box-shadow: -20px 0 40px rgba(0,0,0,0.45);
+  box-shadow: -20px 0 40px rgba(0,0,0,0.6);
   z-index: 2000;
-  transition: right 0.35s ease;
-  padding: 24px 22px;
+  transition: right 0.35s cubic-bezier(0.77, 0, 0.175, 1);
+  padding: 30px 25px;
 }
 
-.mobile-menu.active {
-  right: 0;
-}
+.mobile-menu.active { right: 0; }
 
 .mobile-menu-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(0,0,0,0.45);
-  backdrop-filter: blur(2px);
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
@@ -370,50 +335,50 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 34px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid rgba(162, 140, 99, 0.2);
+  padding-bottom: 15px;
 }
 
 .mobile-menu-header h2 {
   font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem;
+  font-size: 2.2rem;
   letter-spacing: 2px;
-  color: #f0dec0;
+  color: var(--paper-light);
 }
 
 .close-menu {
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(212, 196, 168, 0.18);
   background: transparent;
-  color: #e3d7c0;
-  font-size: 1.2rem;
+  border: none;
+  color: var(--gold-soft);
+  font-size: 2rem;
   cursor: pointer;
-  border-radius: 50%;
+  line-height: 1;
 }
 
 .mobile-nav {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 15px;
 }
 
 .mobile-nav a {
   font-family: 'Cinzel', serif;
-  font-size: 1rem;
-  color: #e3d7c0;
+  font-size: 1.1rem;
+  color: rgba(227, 215, 192, 0.8);
   padding: 12px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  transition: 0.2s ease;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  transition: 0.3s ease;
 }
 
 .mobile-nav a:hover {
-  color: #fff2d2;
-  transform: translateX(4px);
+  color: var(--gold-soft);
+  padding-left: 10px;
 }
 
-/* ==========================================================================
-   4. SEÇÃO HERO (FULL BLEED COM GRADIENTE LATERAL)
-   ========================================================================== */
+
+
+
 /* ==========================================================================
    4. SEÇÃO HERO (FULL BLEED COM GRADIENTE LATERAL)
    ========================================================================== */
@@ -430,7 +395,9 @@ a {
 
 .hero-content-wrapper {
   position: relative;
-  z-index: 10; /* Garante que o texto fique acima de tudo */
+  z-index: 10; 
+  /* Força a margem esquerda e deixa o resto do espaço sobrar na direita */
+  margin-left: 200px; 
 }
 
 .hero-text-area {
@@ -482,7 +449,7 @@ a {
   width: 100%;
   height: 100%;
   /* Do escuro absoluto (mesma cor do fundo) para o transparente */
-  background: linear-gradient(to right, #11100d 0%, rgba(17, 16, 13, 0.9) 15%, transparent 60%);
+  background: linear-gradient(to right, #11100d 0%, rgba(17, 16, 13, 0.9) 15%, transparent 80%);
   z-index: 2;
 }
 
@@ -491,6 +458,50 @@ a {
   display: flex;
   gap: 20px;
 }
+
+/* ==========================================================================
+   ANIMAÇÃO DE ENTRADA DA HERO (SLIDE DA ESQUERDA)
+   ========================================================================== */
+
+/* 1. Criamos a animação */
+@keyframes slideFadeRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px); /* Começa 60px para a esquerda */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* Termina na posição original */
+  }
+}
+
+/* 2. Preparamos os elementos para estarem invisíveis antes da animação começar */
+.hero-text-area .section-label,
+.hero-text-area h1,
+.hero-text-area p,
+.hero-cta-group {
+  opacity: 0; 
+  animation: slideFadeRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* 3. Definimos o tempo de atraso (cascata) para cada elemento */
+.hero-text-area .section-label {
+  animation-delay: 0.2s;
+}
+
+.hero-text-area h1 {
+  animation-delay: 0.4s;
+}
+
+.hero-text-area p {
+  animation-delay: 0.6s;
+}
+
+.hero-cta-group {
+  animation-delay: 0.8s;
+}
+
+
 /* ==========================================================================
    5. CATÁLOGO DE CASOS (MODERNO COM GRADIENTE)
    ========================================================================== */
@@ -1475,3 +1486,97 @@ a {
     line-height: 1.35;
   }
 }
+
+/* ==========================================================================
+   PÁGINA EXCLUSIVA DE CATÁLOGO (casos.html)
+   ========================================================================== */
+
+/* Título de Entrada */
+.page-header-noir {
+  padding: 120px 0 60px;
+  background: radial-gradient(circle at 50% 0%, #1a1816 0%, var(--bg-main) 70%);
+  border-bottom: 1px solid rgba(212, 196, 168, 0.05);
+}
+
+.page-header-noir h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem;
+  color: var(--paper-light);
+  letter-spacing: 2px;
+  margin-bottom: 15px;
+}
+
+.page-header-noir p {
+  font-size: 1.2rem;
+  color: rgba(227, 215, 192, 0.7);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* Grelha Completa de Arquivos */
+.catalog-page-section {
+  padding: 60px 0 100px;
+}
+
+.catalog-grid-full {
+  display: grid;
+  /* Cria colunas automaticamente baseadas no espaço, sem espremer demais */
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* Modificação no botão dentro da página de catálogo para não ser dourado sólido */
+.catalog-grid-full .case-content button {
+  background: transparent;
+  border: 1px solid rgba(162, 140, 99, 0.4); /* Borda dourada suave */
+  color: rgba(227, 215, 192, 0.9);
+  padding: 12px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.catalog-grid-full .case-content button:hover {
+  background: rgba(162, 140, 99, 0.1); /* Fundo ligeiramente dourado ao passar o rato */
+  border-color: var(--gold-soft);
+  color: var(--gold-soft);
+}
+
+
+
+/* ==========================================================================
+   ANIMAÇÃO DE ENTRADA DO CATÁLOGO (Ignora o Scroll)
+   ========================================================================== */
+.catalog-page-section .reveal-up {
+  /* Força a visibilidade inicial */
+  opacity: 0; 
+  transform: translateY(30px);
+  /* Aplica uma animação automática ao abrir a página */
+  animation: fadeUpCards 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Criamos o efeito dos cartões a subirem suavemente */
+@keyframes fadeUpCards {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Opcional: Adiciona um pequeno atraso em cascata para os primeiros cartões */
+.catalog-grid-full .case-card-modern:nth-child(1) { animation-delay: 0.1s; }
+.catalog-grid-full .case-card-modern:nth-child(2) { animation-delay: 0.2s; }
+.catalog-grid-full .case-card-modern:nth-child(3) { animation-delay: 0.3s; }
+.catalog-grid-full .case-card-modern:nth-child(4) { animation-delay: 0.4s; }

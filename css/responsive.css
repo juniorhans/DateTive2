@@ -5,17 +5,17 @@
   
   /* --- Blocos Gerais --- */
   .info-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 2fr;
   }
 
   /* --- Catálogo Moderno (Casos) --- */
   .cases-grid-modern {
-    grid-template-columns: repeat(2, 1fr); /* 2 Colunas no Tablet */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   /* --- Preços & Packs --- */
   .pricing-card.highlighted {
-    transform: scale(1); /* Remove o destaque de tamanho no tablet para não quebrar o layout */
+    transform: scale(1);
   }
   
   .pricing-card.highlighted:hover {
@@ -24,7 +24,7 @@
 
   /* --- Depoimentos --- */
   .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 Colunas no Tablet */
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
@@ -32,67 +32,62 @@
    2. RESPONSIVO PARA CELULARES (Telas menores que 768px)
    ========================================================================== */
 @media (max-width: 768px) {
+
+
+
+
   
   /* --- Configurações Gerais da Tela --- */
   .container {
     width: 94%;
   }
 
-  /* --- Navbar & Topo --- */
+  /* --- Navbar & Topo (ATUALIZADO) --- */
   .topbar {
     position: relative;
   }
 
+  /* Retira o espaçamento lateral exagerado do PC no telemóvel */
+  .topbar .container {
+    padding: 0;
+  }
+
   .nav-wrapper {
-    display: grid;
-    grid-template-columns: 42px 1fr 42px;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 12px 0;
-    gap: 10px;
+    min-height: 65px;
   }
 
   .logo-area {
-    display: contents;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .site-logo {
-    width: 42px;
-    height: 42px;
-    object-fit: contain;
-    justify-self: start;
-  }
-
-  .logo-text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 36px;
+    height: auto;
   }
 
   .logo-title {
-    font-size: 1.9rem;
-    line-height: 1;
-    text-align: center;
+    font-size: 1.8rem;
     margin: 0;
   }
 
   .main-nav, 
-  .profile-btn {
-    display: none; /* Esconde menu e botão de perfil no mobile */
+  .login-btn {
+    display: none; /* Esconde menu e login no telemóvel */
   }
 
   .nav-actions {
     display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: auto;
-    height: auto;
-    position: static;
+    margin-left: auto;
+    gap: 0;
   }
 
   .menu-toggle {
     display: flex;
-    width: 42px;
-    height: 42px;
   }
 
   /* --- Hero Section (Nova Full Bleed) --- */
@@ -106,18 +101,20 @@
     position: relative;
     width: 100%;
     height: 300px;
-    order: 1; /* Coloca a imagem no topo no telemóvel */
+    order: 1;
   }
 
   .hero-side-gradient {
-    /* Muda o gradiente de lateral para inferior no ecrã pequeno */
     background: linear-gradient(to top, #11100d 0%, transparent 100%);
   }
 
   .hero-content-wrapper {
-    order: 2; /* Coloca o texto por baixo da imagem */
+    order: 2;
     padding-top: 30px;
     text-align: center;
+    /* Devolve a centralização no telemóvel, anulando a margem do PC */
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .hero-text-area h1 {
@@ -138,8 +135,8 @@
     width: 100%;
   }
 
-  /* --- Catálogo Moderno (Carrossel Horizontal Deslizante) --- */
-.cases-grid-modern {
+  /* --- Catálogo Moderno (Carrossel Horizontal) --- */
+  .cases-grid-modern {
     display: flex !important;
     flex-wrap: nowrap !important;
     overflow-x: auto;
@@ -149,39 +146,39 @@
     padding: 10px 0 30px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    width: 100%; /* CORREÇÃO: Substituído 100vw por 100% */
+    width: 100%; 
     max-width: 100%; 
     box-sizing: border-box;
   }
 
-.cases-grid-modern::-webkit-scrollbar {
+  .cases-grid-modern::-webkit-scrollbar {
     display: none;
   }
 
-.case-card-modern {
+.cases-grid-modern .case-card-modern {
     flex: 0 0 85% !important;
     width: 85% !important;
     scroll-snap-align: center;
     transform: none !important;
   }
 
-.case-card-modern:hover {
+.cases-grid-modern .case-card-modern:hover {
     transform: none !important;
   }
 
-  /* --- A Experiência (Lifestyle / Como Funciona) --- */
+  /* --- A Experiência --- */
   .experience-title h2 {
     font-size: 2.6rem;
   }
   
   .experience-card,
   .experience-card.reverse {
-    grid-template-columns: 1fr; /* Empilha foto e texto */
+    grid-template-columns: 1fr;
     gap: 24px;
   }
 
   .experience-card.reverse .experience-image {
-    order: 1; /* Força a imagem a ficar sempre acima do texto */
+    order: 1;
   }
   
   .experience-card.reverse .experience-text {
@@ -189,15 +186,15 @@
   }
   
   .experience-image {
-    transform: none !important; /* Remove a rotação da imagem para não cortar as bordas */
+    transform: none !important;
   }
 
-  /* --- Preços & Packs (Carrossel Horizontal Deslizante) --- */
+  /* --- Preços & Packs (Carrossel Horizontal) --- */
   .pricing-header h2 {
     font-size: 2.6rem;
   }
 
-.pricing-grid {
+  .pricing-grid {
     display: flex !important; 
     flex-wrap: nowrap !important;
     overflow-x: auto;
@@ -207,7 +204,7 @@
     padding: 10px 0 40px; 
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; 
-    width: 100%; /* CORREÇÃO: Substituído 100vw por 100% */
+    width: 100%; 
     max-width: 100%; 
     box-sizing: border-box; 
   }
@@ -241,12 +238,12 @@
   }
   
   .testimonials-grid {
-    grid-template-columns: 1fr; /* Força os cards a formarem uma única coluna */
+    grid-template-columns: 1fr;
     gap: 20px;
     padding: 0 10px;
   }
 
-  /* --- CTA Final (Convocação / Dossier) --- */
+  /* --- CTA Final --- */
   .cta-folder-wrapper {
     padding: 60px 25px;
   }
@@ -271,7 +268,7 @@
     font-size: 0.95rem;
   }
 
-  /* --- Footer Simplificado --- */
+  /* --- Footer --- */
   .footer-content {
     flex-direction: column;
     align-items: center;
@@ -301,4 +298,48 @@
     width: 22px;
     height: 18px;
   }
+
+
+  
+/* --- Página de Catálogo Exclusiva (casos.html) --- */
+  .page-header-noir {
+    padding: 30px 0 30px; 
+    
+  }
+
+  .page-header-noir h1 {
+    font-size: 2.2rem; /* Reduzido um pouco para caber nos ecrãs */
+    word-wrap: break-word; /* Força o navegador a quebrar a palavra caso ela tente alargar a tela */
+    overflow-wrap: break-word;
+  }
+
+  .page-header-noir p {
+    font-size: 1.05rem;
+    padding: 0 10px; 
+  }
+
+  .catalog-page-section {
+    padding: 30px 0 60px;
+    width: 100%; 
+    overflow-x: hidden; 
+  }
+
+  .catalog-grid-full {
+    grid-template-columns: 2fr; 
+    gap: 24px;
+    width: 100%; 
+    max-width: 100%;
+    /* Apaguei o max-width: 100vw que estava aqui, pois ele também causa bugs no mobile */
+  }
+
+  /* Faz o container desta página específica ser mais largo no telemóvel */
+  .catalog-page-section .container {
+    width: 100%; /* Pode usar 100% se quiser os cartões colados na borda */
+    padding: 0 20px; /* Um pequeno respiro para não bater no ecrã de vidro */
+  }
+  /* Esconde a descrição do caso apenas no telemóvel */
+  .catalog-page-section .case-card-modern .case-content p {
+    display: none;
+  }
 }
+
