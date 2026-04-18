@@ -1580,3 +1580,248 @@ a {
 .catalog-grid-full .case-card-modern:nth-child(2) { animation-delay: 0.2s; }
 .catalog-grid-full .case-card-modern:nth-child(3) { animation-delay: 0.3s; }
 .catalog-grid-full .case-card-modern:nth-child(4) { animation-delay: 0.4s; }
+
+/* ==========================================================================
+   PÁGINA DE LOGIN (login.html)
+   ========================================================================== */
+.login-body {
+  background: radial-gradient(circle at 50% 50%, #1a1816 0%, var(--bg-main) 100%);
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Força a altura a ser exatamente 100% da janela visível */
+  overflow: hidden; /* Corta qualquer excesso e mata a barra de scroll */
+}
+
+.login-section {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px; /* Removi o padding vertical (40px) que estava a empurrar a tela para baixo */
+}
+
+.login-glass-card {
+  background: rgba(17, 16, 13, 0.5);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 196, 168, 0.1);
+  border-radius: 12px;
+  padding: 30px; /* Menos espaço interno */
+  margin: 25px 0; /* Espaço para o título em cima e botão em baixo */
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom:10px;
+  margin-top: 30px;
+}
+
+.login-header h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem;
+  color: var(--paper-light);
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.login-header p {
+  color: rgba(227, 215, 192, 0.7);
+  font-size: 1.1rem;
+}
+
+.login-form .input-group {
+  margin-bottom: 20px;
+}
+
+
+
+.login-form label {
+  display: block;
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  color: var(--gold-soft);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.login-form input[type="email"],
+.login-form input[type="password"] {
+  width: 100%;
+  padding: 14px 16px;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(212, 196, 168, 0.2);
+  border-radius: 4px;
+  color: var(--paper-light);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--gold-soft);
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px rgba(162, 140, 99, 0.2);
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem; /* Ligeiramente menor para caber melhor */
+}
+
+.login-actions-wrapper {
+  padding: 0 10px;
+}
+
+
+
+.remember-me input[type="checkbox"] {
+  accent-color: var(--gold-soft);
+  width: 16px;
+  height: 16px;
+}
+
+.forgot-password, .login-footer a {
+  color: var(--gold-soft);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.forgot-password:hover, .login-footer a:hover {
+  color: var(--paper-light);
+}
+
+.forgot-password {
+  color: var(--gold-soft);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.login-footer {
+  margin-top: 30px;
+  text-align: center;
+  font-size: 1rem;
+  color: rgba(227, 215, 192, 0.7);
+}
+
+.back-home {
+  font-family: 'Cinzel', serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  opacity: 0.6;
+}
+
+.back-home:hover {
+  opacity: 1;
+}
+
+
+/* Estilo para o link de esqueci a senha centralizado */
+.forgot-password-central {
+  display: block;
+  color: var(--gold-soft);
+  text-decoration: none;
+  font-family: 'Cinzel', serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  margin-bottom: 15px; /* Espaço antes do botão */
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+
+.forgot-password-central:hover {
+  opacity: 0.7;
+  text-decoration: underline;
+}
+
+/* Centraliza o "Lembrar credenciais" dentro da caixa se preferir */
+.login-glass-card .form-actions {
+  display: flex;
+  justify-content: center; /* Centraliza o checkbox dentro do vidro */
+}
+
+/* Garante que o container principal não tenha margens desalinhadas */
+.login-container-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Faz com que o botão e a caixa tenham a mesma largura */
+}
+
+/* Container principal do label */
+/* Container principal do label - Agora com mais espaço e alinhamento central */
+/* Container principal do checkbox */
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 300px; /* Espaço real entre o quadrado e o texto */
+  cursor: pointer;
+  user-select: none;
+  padding: 10px 0;
+  width: fit-content;
+  margin: 0 auto; 
+}
+
+/* Esconde o checkbox padrão */
+.remember-me input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* O quadrado dourado customizado */
+.custom-checkbox {
+  height: 22px;
+  width: 22px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border: 2px solid var(--gold-muted);
+  border-radius: 4px;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+/* Hover e Check */
+.remember-me:hover .custom-checkbox {
+  border-color: var(--gold-soft);
+  box-shadow: 0 0 12px rgba(162, 140, 99, 0.4);
+}
+
+.remember-me input:checked ~ .custom-checkbox {
+  background-color: var(--gold-soft);
+  border-color: var(--gold-soft);
+  transform: scale(1.1);
+}
+
+/* O símbolo de "v" (Checkmark) */
+.custom-checkbox:after {
+  content: "";
+  position: absolute;
+  display: none;
+  left: 7px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid #11100d; 
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+}
+
+.remember-me input:checked ~ .custom-checkbox:after {
+  display: block;
+}
+
+/* Texto ao lado */
+.label-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: rgba(227, 215, 192, 0.9);
+  letter-spacing: 1px;
+  white-space: nowrap;
+}
