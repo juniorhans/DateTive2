@@ -411,6 +411,7 @@ a {
   letter-spacing: 1px;
   color: var(--paper-light);
   margin-bottom: 25px;
+  text-shadow: 4px 6px 12px rgba(0, 0, 0, 0.85);
 }
 
 .hero-text-area h1 span {
@@ -422,6 +423,7 @@ a {
   line-height: 1.5;
   color: rgba(227, 215, 192, 0.85);
   margin-bottom: 45px;
+  text-shadow: 4px 6px 12px rgba(0, 0, 0, 0.85);
 }
 
 /* Lado da Imagem */
