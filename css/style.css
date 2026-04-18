@@ -1825,3 +1825,46 @@ a {
   letter-spacing: 1px;
   white-space: nowrap;
 }
+
+
+
+/* Garante que a imagem flutuante use o texto como ponto de referência */
+.hero-text-area {
+  position: relative;
+  z-index: 10;
+}
+
+/* Estilo exclusivo para a foto dos arquivos */
+/* 1. Criamos a animação (vem da esquerda, invisível, e ganha a inclinação no final) */
+@keyframes slideDossie {
+  0% {
+    opacity: 0;
+    /* Começa 100px mais para a esquerda (translateX) e sem inclinação (rotate 0) */
+    transform: translateY(-50%) translateX(-150px) rotate(10deg); 
+  }
+  100% {
+    opacity: 1;
+    /* Termina na posição exata que definimos antes */
+    transform: translateY(-50%) translateX(0) rotate(35deg); 
+  }
+}
+
+/* 2. Atualizamos a classe para tocar a animação */
+.dossie-flutuante {
+  position: absolute;
+  top: 50%;
+  left: 55%;
+  width: 350px;
+  z-index: -1;
+  pointer-events: none;
+  
+  /* Estado inicial antes da animação tocar */
+  opacity: 0; 
+  transform: translateY(-50%) rotate(15deg);
+  
+  /* Chama a animação: nome, tempo (1.2s), curva suave, e 'forwards' para parar no final */
+  animation: slideDossie 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  
+  /* Opcional: um pequeno atraso para os papéis aparecerem logo depois do texto */
+  animation-delay: 0.5s; 
+}
